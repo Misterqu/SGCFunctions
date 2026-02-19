@@ -12,7 +12,7 @@ class CfgPatches {
 class CfgFunctions {
     class sgcu {
         tag = "sgcu";
-        file = "addons/sgcu"
+        file = "addons/sgcu";
 
         class functions {
             file = "functions";
