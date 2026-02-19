@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SGCFunctions Function Reference</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <h1>Function Reference</h1>
+      <p><img class="logo" src="../SGC.svg" alt="SGC Logo" /></p>
+      <p class="lead">This page documents every public function exported by this mod under the <code>sgc_utils_fnc_</code> namespace.</p>
+      <ul class="nav">
+        <li><a href="index.html">Documentation Home</a></li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2><code>sgc_utils_fnc_teleportPlayersInList</code></h2>
+      <p><strong>Purpose:</strong> Teleport player units from a provided array to a destination and optionally set facing direction.</p>
+      <p><strong>Execution:</strong> Can be called anywhere. It only teleports entries that are actual players.</p>
+      <h3>Parameters</h3>
+      <ol>
+        <li><code>ARRAY</code> <strong><em>_units</em></strong></li>
+        <li><code>ARRAY</code> <strong><em>_destination</em></strong></li>
+        <li><code>NUMBER</code> <strong><em>_direction</em></strong> (optional, default: <code>-1</code>)</li>
+      </ol>
+      <h3>Returns</h3>
+      <ul><li><code>NUMBER</code> — Count of players teleported.</li></ul>
+      <h3>Example</h3>
+      <pre><code>private _count = [thisList, [5000, 5000, 0], 180] call sgc_utils_fnc_teleportPlayersInList;
+hint format ["Teleported %1 players", _count];</code></pre>
+    </section>
+
+    <section class="card">
+      <h2><code>sgc_utils_fnc_createGlobalMarker</code></h2>
+      <p><strong>Purpose:</strong> Create or update a global marker for all machines.</p>
+      <p><strong>Execution:</strong> <strong>Server-only behavior.</strong> If called on a non-server machine, it exits early and returns the marker name without creating/updating it.</p>
+      <h3>Parameters</h3>
+      <ol>
+        <li><code>STRING</code> <strong><em>_name</em></strong></li>
+        <li><code>ARRAY</code> <strong><em>_position</em></strong></li>
+        <li><code>STRING</code> <strong><em>_text</em></strong> (optional, default: <code>""</code>)</li>
+        <li><code>STRING</code> <strong><em>_color</em></strong> (optional, default: <code>"ColorRed"</code>)</li>
+        <li><code>STRING</code> <strong><em>_type</em></strong> (optional, default: <code>"mil_dot"</code>)</li>
+      </ol>
+      <h3>Returns</h3>
+      <ul><li><code>STRING</code> — Marker name. Returns <code>""</code> when <code>_name</code> is empty.</li></ul>
+      <h3>Example</h3>
+      <pre><code>if (isServer) then {
+    ["mission_marker_1", [5000, 5000, 0], "Primary Objective", "ColorRed", "mil_objective"] call sgc_utils_fnc_createGlobalMarker;
+};</code></pre>
+    </section>
+
+    <section class="card">
+      <h2><code>sgc_utils_fnc_spawnGroup</code></h2>
+      <p><strong>Purpose:</strong> Spawn an AI group with configurable side, size, class, and spread.</p>
+      <p><strong>Execution:</strong> <strong>Server-only.</strong> Non-server calls return <code>grpNull</code>.</p>
+      <h3>Parameters</h3>
+      <ol>
+        <li><code>ARRAY</code> <strong><em>_spawnPos</em></strong></li>
+        <li><code>SIDE</code> <strong><em>_side</em></strong> (optional, default: <code>east</code>)</li>
+        <li><code>NUMBER</code> <strong><em>_groupSize</em></strong> (optional, default: <code>6</code>)</li>
+        <li><code>STRING</code> <strong><em>_unitClass</em></strong> (optional, default: <code>"O_Soldier_F"</code>)</li>
+        <li><code>NUMBER</code> <strong><em>_radius</em></strong> (optional, default: <code>5</code>)</li>
+      </ol>
+      <h3>Returns</h3>
+      <ul><li><code>GROUP</code> — Created group object.</li></ul>
+      <h3>Example</h3>
+      <pre><code>if (isServer) then {
+    private _grp = [[5000, 5000, 0], east, 6, "O_Soldier_F", 5] call sgc_utils_fnc_spawnGroup;
+};</code></pre>
+    </section>
+
+    <section class="card">
+      <h2><code>sgc_utils_fnc_addMoveWaypoint</code></h2>
+      <p><strong>Purpose:</strong> Add a MOVE waypoint to an existing group.</p>
+      <h3>Parameters</h3>
+      <ol>
+        <li><code>GROUP</code> <strong><em>_group</em></strong></li>
+        <li><code>ARRAY</code> <strong><em>_position</em></strong></li>
+        <li><code>NUMBER</code> <strong><em>_radius</em></strong> (optional, default: <code>0</code>)</li>
+      </ol>
+      <h3>Returns</h3>
+      <ul>
+        <li><code>ARRAY</code> — Waypoint handle as returned by <code>addWaypoint</code>.</li>
+        <li>Returns <code>[]</code> if <code>_group</code> is null.</li>
+      </ul>
+      <h3>Example</h3>
+      <pre><code>if (isServer) then {
+    private _grp = [[5000, 5000, 0], east, 6, "O_Soldier_F", 5] call sgc_utils_fnc_spawnGroup;
+    private _wp = [_grp, [5100, 5100, 0], 0] call sgc_utils_fnc_addMoveWaypoint;
+};</code></pre>
+    </section>
+
+    <section class="card">
+      <h2><code>sgc_utils_fnc_sendIntelToSide</code></h2>
+      <p><strong>Purpose:</strong> Send intel to all alive players on a specific side, with optional marker update, diary entry, and timed hint text.</p>
+      <p><strong>Execution:</strong> <strong>Server-only.</strong> Non-server calls return <code>0</code>.</p>
+      <h3>Parameters</h3>
+      <ol>
+        <li><code>SIDE</code> <strong><em>_targetSide</em></strong> (optional, default: <code>west</code>)</li>
+        <li><code>STRING</code> <strong><em>_hintText</em></strong></li>
+        <li><code>NUMBER</code> <strong><em>_hintDuration</em></strong> (optional, default: <code>5</code>)</li>
+        <li><code>STRING</code> <strong><em>_diaryTitle</em></strong> (optional, default: <code>"Intel"</code>)</li>
+        <li><code>STRING</code> <strong><em>_diaryText</em></strong></li>
+        <li><code>STRING</code> <strong><em>_markerName</em></strong></li>
+        <li><code>STRING</code> <strong><em>_markerText</em></strong></li>
+        <li><code>ARRAY</code> <strong><em>_markerPos</em></strong></li>
+        <li><code>STRING</code> <strong><em>_markerColor</em></strong> (optional, default: <code>"ColorRed"</code>)</li>
+        <li><code>STRING</code> <strong><em>_markerType</em></strong> (optional, default: <code>"mil_warning"</code>)</li>
+      </ol>
+      <h3>Returns</h3>
+      <ul><li><code>NUMBER</code> — Count of players notified.</li></ul>
+      <h3>Example</h3>
+      <pre><code>if (isServer) then {
+    private _notified = [
+        west,
+        "Enemy mechanized units detected near AO.",
+        5,
+        "Enemy Movement",
+        "Enemy mechanized units observed near AO. Stay alert.",
+        "diary_marker_001",
+        "Enemy Sighted",
+        [5000, 5000, 0],
+        "ColorRed",
+        "mil_warning"
+    ] call sgc_utils_fnc_sendIntelToSide;
+
+    diag_log format ["Intel sent to %1 players", _notified];
+};</code></pre>
+    </section>
+  </main>
+</body>
+</html>
