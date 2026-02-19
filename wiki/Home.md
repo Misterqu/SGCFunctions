@@ -1,5 +1,7 @@
 # SGCFunctions Wiki
 
+![SGC Logo](../SGC.svg)
+
 Welcome to the SGCFunctions GitHub Wiki.
 
 ## What this mod provides
