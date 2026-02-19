@@ -255,7 +255,7 @@ def lint_file(path: Path) -> list[LintIssue]:
 
 
 def collect_sqf_files() -> list[Path]:
-    return sorted(Path("functions").glob("*.sqf"))
+    return sorted(Path("addons").glob("*/functions/*.sqf"))
 
 
 def main() -> int:
