@@ -14,7 +14,7 @@ class CfgFunctions {
         tags="SGCF";
 
         class functions {
-            file = "sgcu/functions";
+            file = "sgcu\functions";
 
             class teleportPlayersInList {
                
