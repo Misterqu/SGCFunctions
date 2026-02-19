@@ -10,24 +10,26 @@ class CfgPatches {
 };
 
 class CfgFunctions {
-    class sgcu {
+    class StargateCommandFunctions {
+        tags="SGCF"
+
         class functions {
-            file = "addons/sgcu/functions";
+            file = "sgcu/functions";
 
             class teleportPlayersInList {
-                file = "addons/sgcu/functions/fn_teleportPlayersInList.sqf";
+               
             };
             class createGlobalMarker {
-                file = "addons/sgcu/functions/fn_createGlobalMarker.sqf";
+                
             };
             class spawnGroup {
-                file = "addons/sgcu/functions/fn_spawnGroup.sqf";
+              
             };
             class addMoveWaypoint {
-                file = "addons/sgcu/functions/fn_addMoveWaypoint.sqf";
+               
             };
             class sendIntelToSide {
-                file = "addons/sgcu/functions/fn_sendIntelToSide.sqf";
+               
             };
         };
     };
