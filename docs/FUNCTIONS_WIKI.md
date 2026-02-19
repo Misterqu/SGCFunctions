@@ -1,5 +1,7 @@
 # SGCFunctions Wiki: Function Reference & Usage
 
+![SGC Logo](../SGC.svg)
+
 This page documents every public function exported by this mod under the `sgc_utils_fnc_` namespace.
 
 ## Getting started

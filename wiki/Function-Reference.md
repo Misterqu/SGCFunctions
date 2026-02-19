@@ -1,5 +1,7 @@
 # Function Reference
 
+![SGC Logo](../SGC.svg)
+
 This page documents every public function exported by this mod under the `sgc_utils_fnc_` namespace.
 
 ## `sgc_utils_fnc_teleportPlayersInList`
