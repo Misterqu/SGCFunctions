@@ -11,17 +11,24 @@ class CfgPatches {
 
 class CfgFunctions {
     class sgcu {
-        tag = "sgcu";
-        file = "addons/sgcu";
-
         class functions {
-            file = "functions";
+            file = "addons/sgcu/functions";
 
-            class teleportPlayersInList {};
-            class createGlobalMarker {};
-            class spawnGroup {};
-            class addMoveWaypoint {};
-            class sendIntelToSide {};
+            class teleportPlayersInList {
+                file = "addons/sgcu/functions/fn_teleportPlayersInList.sqf"
+            };
+            class createGlobalMarker {
+                file = "addons/sgcu/functions/fn_createGlobalMarker.sqf"
+            };
+            class spawnGroup {
+                file = "addons/sgcu/functions/fn_spawnGroup.sqf"
+            };
+            class addMoveWaypoint {
+                file = "addons/sgcu/functions/fn_addMoveWaypoint.sqf"
+            };
+            class sendIntelToSide {
+                file = "addons/sgcu/functions/fn_sendIntelToSide.sqf"
+            };
         };
     };
 };
