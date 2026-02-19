@@ -28,6 +28,17 @@ No mission-side `.sqf` files are required. If the mod is loaded, mission makers 
 
 A GitHub Pages-friendly reference for all exported functions is available under `pages/` (start at `pages/index.html`).
 
+## HEMTT build and release pipeline
+
+A publish-ready workflow now lives at `.github/workflows/hemtt-release.yml` and uses HEMTT for packaging:
+
+- On pull requests and pushes to `main`/`master`, it runs `hemtt build` and `hemtt release`.
+- It uploads the generated `release/` output as a GitHub Actions artifact.
+- On version tags (`v*`), it also attaches `release/*` to a GitHub Release.
+- Tagged builds publish the generated package to GitHub Releases; Steam Workshop upload is intentionally manual.
+
+Project metadata for HEMTT is in `.hemtt/project.toml`.
+
 ## CI linting for SQF
 
 A GitHub Actions workflow is included at `.github/workflows/sqf-lint.yml`.

@@ -1,0 +1,44 @@
+name: Build & Release (HEMTT)
+
+permissions:
+  contents: write
+
+on:
+  pull_request:
+  push:
+    branches: ["main", "master"]
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup HEMTT
+        uses: arma-actions/hemtt@v1
+
+      - name: Build mod
+        run: hemtt build
+
+      - name: Create release package
+        run: hemtt release
+
+      - name: Upload release package artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: sgcfunctions-release
+          path: release
+          if-no-files-found: error
+
+      - name: Publish GitHub release assets
+        if: github.ref_type == 'tag'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: release/*

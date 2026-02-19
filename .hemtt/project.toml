@@ -1,0 +1,16 @@
+name = "SGCFunctions"
+prefix = "sgc_utils"
+mainprefix = "z"
+
+[files]
+include = [
+    "mod.cpp",
+    "README.md",
+    "icon.svg"
+]
+
+[version]
+major = 1
+minor = 0
+patch = 0
+build = 0
