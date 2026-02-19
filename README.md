@@ -12,7 +12,7 @@ This repository is organized so addon source content is clearly separated from r
 - `addons/sgc_utils/functions/*.sqf` - exported SQF function implementations
 - `addons/sgc_utils/$PBOPREFIX$` - PBO prefix definition
 - `mod.cpp` - launcher metadata for the mod
-- `docs/`, `wiki/`, `.github/`, `tools/` - documentation and development tooling (not packed into the addon)
+- `docs/`, `pages/`, `.github/`, `tools/` - documentation and development tooling (not packed into the addon)
 
 ## What mission makers get
 
@@ -26,7 +26,7 @@ No mission-side `.sqf` files are required. If the mod is loaded, mission makers 
 
 ## Full function reference
 
-A wiki-style reference for all exported functions is available at `docs/FUNCTIONS_WIKI.md`.
+A GitHub Pages-friendly reference for all exported functions is available under `pages/` (start at `pages/index.html`).
 
 ## CI linting for SQF
 

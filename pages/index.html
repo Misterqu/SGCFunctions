@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SGCFunctions Pages</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <h1>SGCFunctions Pages</h1>
+      <p><img class="logo" src="../SGC.svg" alt="SGC Logo" /></p>
+      <p class="lead">Welcome to the SGCFunctions GitHub Pages documentation.</p>
+    </section>
+
+    <section class="card">
+      <h2>What this mod provides</h2>
+      <p>
+        SGCFunctions is an Arma 3 utility-function mod that exposes reusable SQF helpers under the
+        <code>sgc_utils_fnc_</code> namespace via <code>CfgFunctions</code>.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Exported functions</h2>
+      <ul>
+        <li><code>sgc_utils_fnc_teleportPlayersInList</code></li>
+        <li><code>sgc_utils_fnc_createGlobalMarker</code></li>
+        <li><code>sgc_utils_fnc_spawnGroup</code></li>
+        <li><code>sgc_utils_fnc_addMoveWaypoint</code></li>
+        <li><code>sgc_utils_fnc_sendIntelToSide</code></li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Function documentation</h2>
+      <ul class="nav">
+        <li><a href="Function-Reference.html">Function Reference</a></li>
+      </ul>
+      <p class="small-note">Functions marked server-only should be called inside <code>if (isServer) then { ... };</code>.</p>
+    </section>
+  </main>
+</body>
+</html>
