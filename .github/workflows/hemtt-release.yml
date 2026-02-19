@@ -24,9 +24,6 @@ jobs:
       - name: Setup HEMTT
         uses: arma-actions/hemtt@v1
 
-      - name: Build mod
-        run: hemtt build
-
       - name: Create release package
         run: hemtt release
 
