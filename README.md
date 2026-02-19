@@ -14,12 +14,7 @@ No mission-side `.sqf` files are required. If the mod is loaded, mission makers 
 
 ## Full function reference
 
-Function documentation has been moved to the GitHub Wiki pages:
-
-- `wiki/Home.md` (GitHub Wiki Home page source)
-- `wiki/Function-Reference.md` (GitHub Wiki function reference source)
-
-When publishing to GitHub Wiki, use these files as the page content for `Home` and `Function-Reference`.
+Function docs are maintained in the GitHub Wiki (`Home` and `Function-Reference` pages), with source files stored in this repo under `wiki/`.
 
 ## CI linting for SQF
 
