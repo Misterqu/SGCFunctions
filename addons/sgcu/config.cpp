@@ -11,7 +11,7 @@ class CfgPatches {
 
 class CfgFunctions {
     class StargateCommandFunctions {
-        tags="SGCF"
+        tags="SGCF";
 
         class functions {
             file = "sgcu/functions";
