@@ -1,6 +1,6 @@
 # SGCFunctions (Arma 3 utility-function mod)
 
-![SGC Logo](SGC.svg)
+![SGC Logo](.docs/SGC.svg)
 
 This repo contains an Arma 3 mod that exposes reusable SQF helper functions under the `sgc_utils_` prefix via `CfgFunctions`.
 
