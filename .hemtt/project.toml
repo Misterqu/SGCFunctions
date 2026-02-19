@@ -1,5 +1,6 @@
 name = "SGCFunctions"
 prefix = "sgcu"
+mainprefix = "z"
 
 [files]
 include = [
