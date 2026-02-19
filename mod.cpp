@@ -1,6 +1,6 @@
 name = "SGC Functions";
 picture = "icon.jpg";
-logo = "icon.jgp";
+logo = "icon.jpg";
 logoOver = "icon.jpg";
 tooltip = "SGCFunctions";
 tooltipOwned = "SGCFunctions";

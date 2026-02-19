@@ -1,5 +1,5 @@
 name = "SGCFunctions"
-prefix = "sgc_utils"
+prefix = "sgcu"
 
 [files]
 include = [

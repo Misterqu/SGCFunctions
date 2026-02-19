@@ -10,9 +10,11 @@ class CfgPatches {
 };
 
 class CfgFunctions {
-    class sgc_utils {
-        tag = "sgc_utils";
-        class core {
+    class sgcu {
+        tag = "sgcu";
+        file = "addons/sgcu"
+
+        class functions {
             file = "functions";
 
             class teleportPlayersInList {};
