@@ -1,0 +1,9 @@
+name = "SGC Functions";
+picture = "";
+logo = "";
+logoOver = "";
+tooltip = "SGCFunctions";
+tooltipOwned = "SGCFunctions";
+overview = "Reusable SQF helper functions for Arma 3 mission makers.";
+author = "SGC";
+overviewPicture = "";

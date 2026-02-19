@@ -2,6 +2,16 @@
 
 This repo contains an Arma 3 mod that exposes reusable SQF helper functions under the `sgc_utils_` prefix via `CfgFunctions`.
 
+## Repository layout
+
+This repository is organized so addon source content is clearly separated from repo-only files:
+
+- `addons/sgc_utils/config.cpp` - addon config that is packed into `sgc_utils.pbo`
+- `addons/sgc_utils/functions/*.sqf` - exported SQF function implementations
+- `addons/sgc_utils/$PBOPREFIX$` - PBO prefix definition
+- `mod.cpp` - launcher metadata for the mod
+- `docs/`, `wiki/`, `.github/`, `tools/` - documentation and development tooling (not packed into the addon)
+
 ## What mission makers get
 
 No mission-side `.sqf` files are required. If the mod is loaded, mission makers can call:
