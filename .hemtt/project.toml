@@ -1,12 +1,11 @@
 name = "SGCFunctions"
 prefix = "sgc_utils"
-mainprefix = "z"
 
 [files]
 include = [
     "mod.cpp",
     "README.md",
-    "icon.svg"
+    "icon.jpg"
 ]
 
 [version]
