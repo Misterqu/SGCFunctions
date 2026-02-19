@@ -29,9 +29,9 @@ if (_name isEqualTo "") exitWith {""};
 if (!isServer) exitWith {_name};
 
 private _marker = createMarker [_name, _position];
-_marker setMarkerPos _position;
-_marker setMarkerText _text;
-_marker setMarkerColor _color;
+_marker setMarkerPosLocal _position;
+_marker setMarkerTextLocal _text;
+_marker setMarkerColorLocal _color;
 _marker setMarkerType _type;
 
 _name

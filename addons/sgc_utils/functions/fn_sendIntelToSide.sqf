@@ -49,7 +49,7 @@ params [
 
 if (!isServer) exitWith {0};
 
-if !(_markerName isEqualTo "") then {
+if (_markerName isNotEqualTo "") then {
     [_markerName, _markerPos, _markerText, _markerColor, _markerType] call sgc_utils_fnc_createGlobalMarker;
 };
 
