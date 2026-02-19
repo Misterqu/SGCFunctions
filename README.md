@@ -51,3 +51,18 @@ if (isServer) then {
     ] call sgc_utils_fnc_sendIntelToSide;
 };
 ```
+
+## CI linting for SQF
+
+A GitHub Actions workflow is included at `.github/workflows/sqf-lint.yml`.
+It runs `python3 tools/lint_sqf.py` on every pull request and on pushes to `main`/`master`.
+
+Current lint checks:
+- trailing whitespace
+- tab characters
+- unbalanced brackets `()[]{}`
+- missing newline at end of file
+- malformed `params [...]` entries in function files
+- command arity checks for common array-style calls (`createMarker`, `createUnit`, `addWaypoint`, `remoteExecCall`)
+
+The workflow emits GitHub annotation errors so issues are highlighted inline in PRs.

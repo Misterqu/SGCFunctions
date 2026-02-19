@@ -1,0 +1,22 @@
+name: SQF Lint
+
+on:
+  pull_request:
+  push:
+    branches: ["main", "master"]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run SQF linter
+        run: python3 tools/lint_sqf.py
