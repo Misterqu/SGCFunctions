@@ -1,5 +1,5 @@
 name = "SGCFunctions"
-prefix = "SGCFunctions"
+prefix = "sgcf"
 mainprefix = "z"
 
 [files]
