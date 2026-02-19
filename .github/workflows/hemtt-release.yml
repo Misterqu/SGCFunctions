@@ -31,11 +31,15 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: sgcfunctions-release
-          path: release
+          path: |
+            .hemttout/release
+            release
           if-no-files-found: error
 
       - name: Publish GitHub release assets
         if: github.ref_type == 'tag'
         uses: softprops/action-gh-release@v2
         with:
-          files: release/*
+          files: |
+            .hemttout/release/*
+            release/*

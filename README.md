@@ -33,8 +33,8 @@ A GitHub Pages-friendly reference for all exported functions is available under 
 A publish-ready workflow now lives at `.github/workflows/hemtt-release.yml` and uses HEMTT for packaging:
 
 - On pull requests and pushes to `main`/`master`, it runs `hemtt release`.
-- It uploads the generated `release/` output as a GitHub Actions artifact.
-- On version tags (`v*`), it also attaches `release/*` to a GitHub Release.
+- It uploads generated release output (`.hemttout/release` or `release`) as a GitHub Actions artifact.
+- On version tags (`v*`), it attaches packaged files from `.hemttout/release/*` (or `release/*`) to a GitHub Release.
 - Tagged builds publish the generated package to GitHub Releases; Steam Workshop upload is intentionally manual.
 
 Project metadata for HEMTT is in `.hemtt/project.toml`.
