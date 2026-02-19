@@ -32,7 +32,7 @@ jobs:
         with:
           name: sgcfunctions-release
           path: |
-            .hemttout/release/*
+            .hemttout/release/**
           if-no-files-found: error
 
       - name: Publish GitHub release assets
@@ -40,4 +40,4 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: |
-            .hemttout/release/*
+            .hemttout/release/**

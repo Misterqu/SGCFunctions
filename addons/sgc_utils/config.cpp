@@ -13,7 +13,7 @@ class CfgFunctions {
     class sgc_utils {
         tag = "sgc_utils";
         class core {
-            file = "functions";
+            file = "core/functions";
 
             class teleportPlayersInList {};
             class createGlobalMarker {};

@@ -9,7 +9,7 @@ This repo contains an Arma 3 mod that exposes reusable SQF helper functions unde
 This repository is organized so addon source content is clearly separated from repo-only files:
 
 - `addons/sgc_utils/config.cpp` - addon config that is packed into `sgc_utils.pbo`
-- `addons/sgc_utils/functions/*.sqf` - exported SQF function implementations
+- `addons/sgc_utils/core/functions/*.sqf` - exported SQF function implementations
 - `addons/sgc_utils/$PBOPREFIX$` - PBO prefix definition
 - `mod.cpp` - launcher metadata for the mod
 - `docs/`, `pages/`, `.github/`, `tools/` - documentation and development tooling (not packed into the addon)
@@ -34,7 +34,7 @@ A publish-ready workflow now lives at `.github/workflows/hemtt-release.yml` and 
 
 - On pull requests and pushes to `main`/`master`, it runs `hemtt release`.
 - It uploads generated release output (`.hemttout/release` or `release`) as a GitHub Actions artifact.
-- On version tags (`v*`), it attaches packaged files from `.hemttout/release/*` (or `release/*`) to a GitHub Release.
+- On version tags (`v*`), it attaches packaged files from `.hemttout/release/**` (or `release/**`) to a GitHub Release.
 - Tagged builds publish the generated package to GitHub Releases; Steam Workshop upload is intentionally manual.
 
 Project metadata for HEMTT is in `.hemtt/project.toml`.
